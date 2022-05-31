@@ -7,3 +7,4 @@ payload:
   - DOMAIN-SUFFIX,bitmovin.com
   - DOMAIN,d2n9h2wits23hf.cloudfront.net:443
   - DOMAIN,f1prodlive.akamaized.net:443
+  - DOMAIN,mobile-collector.newrelic.com
