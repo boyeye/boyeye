@@ -2,12 +2,11 @@ proxies:
  - name: "WARP+"
    type: wireguard
    private-key: iKHuA8V731zl9QeFmk4UBoaDb4FdDbWZCXyYX6mcr00=
-   peers:
-    - server: 162.159.193.5
-      port: 2408
-      ip: 172.16.0.2
-      public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-      allowed-ips: ['0.0.0.0/0']
+   server: 162.159.193.5
+   port: 2408
+   ip: 172.16.0.2
+   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+   allowed-ips: ['0.0.0.0/0']
    udp: true
    mtu: 1280
    remote-dns-resolve: true
