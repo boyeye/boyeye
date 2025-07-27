@@ -13,6 +13,8 @@ payload:
   - DOMAIN-SUFFIX,mgw2.myvideo.net.tw
   - DOMAIN-SUFFIX,mgw3.myvideo.net.tw
   - DOMAIN-SUFFIX,www.myvideo.net.tw
+  - DOMAIN-SUFFIX,st.myvideo.net.tw
+  - DOMAIN-SUFFIX,img.myvideo.net.tw
 
   # CDN 视频流 (Akamaized)
   - DOMAIN-SUFFIX,ak-myvideo.akamaized.net
