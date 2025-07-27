@@ -10,11 +10,15 @@ payload:
   - DOMAIN-SUFFIX,service.myvideo.net.tw
   - DOMAIN-SUFFIX,myvideo.cdn.hinet.net
   - DOMAIN-SUFFIX,epg.myvideo.net.tw
+  - DOMAIN-SUFFIX,mgw2.myvideo.net.tw
+  - DOMAIN-SUFFIX,mgw3.myvideo.net.tw
+  - DOMAIN-SUFFIX,www.myvideo.net.tw
 
   # CDN 视频流 (Akamaized)
   - DOMAIN-SUFFIX,ak-myvideo.akamaized.net
   - DOMAIN-SUFFIX,hls.myvideo.net.tw
   - DOMAIN-SUFFIX,hds.myvideo.net.tw
+  
 
   # 静态资源
   - DOMAIN-SUFFIX,static-myvideo.akamaized.net
