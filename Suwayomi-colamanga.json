@@ -1,0 +1,87 @@
+{
+  "id": "colamanga",
+  "name": "COLAMANGA",
+  "version": "2025-09-15",
+  "baseUrl": "https://www.colamanga.com",
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+    "Accept-Language": "zh-CN,zh;q=0.9"
+  },
+  "search": {
+    "method": "GET",
+    "url": "https://www.colamanga.com/?s={query}",
+    "queryParamEncoding": "utf-8",
+    "resultListSelector": "div#main, .manga-list, .list, .post, .archive",
+    "resultItem": {
+      "selector": "a[href*=\"/manga-\"]",
+      "title": "text",
+      "url": "@href",
+      "cover": "img@src"
+    },
+    "note": "站点搜索是简易的 '?s=关键词' 风格，返回的 HTML 中包含指向 /manga-xxxxx/ 的条目。"
+  },
+  "catalogs": {
+    "latest": {
+      "url": "https://www.colamanga.com/show?orderBy=update",
+      "listSelector": ".manga-list, .list, .post",
+      "item": {
+        "selector": "a[href*=\"/manga-\"]",
+        "title": "text",
+        "url": "@href",
+        "cover": "img@src",
+        "summary": ".excerpt, .desc, p"
+      }
+    },
+    "popular": {
+      "url": "https://www.colamanga.com/",
+      "listSelector": ".manga-list, .home-list, .post",
+      "item": {
+        "selector": "a[href*=\"/manga-\"]",
+        "title": "text",
+        "url": "@href",
+        "cover": "img@src"
+      }
+    }
+  },
+  "mangaDetail": {
+    "titleSelector": "h1, h2, .post-title, .entry-title",
+    "authorSelector": "li:contains('作者'), .meta:contains('作者'), .author",
+    "statusSelector": "li:contains('状态'), .meta:contains('状态')",
+    "updatedSelector": "li:contains('更新'), .meta:contains('更新')",
+    "genresSelector": ".tags, .categories, li a[href*='category']",
+    "descriptionSelector": ".intro, .description, .entry-content, #content p, .post-content",
+    "coverSelector": "img[src*='/uploads/'], .thumbnail img, .post-thumbnail img",
+    "chaptersListSelector": "a[href*='/.html'], .chapter-list a, .chapter a, ul li a[href*='/manga-']",
+    "chapterItem": {
+      "selector": "a[href*='.html']",
+      "title": "text",
+      "url": "@href",
+      "date": "text"
+    },
+    "notes": "章节列表通常为 当前漫画详情页 中的多条 <a>，链接格式类似 /manga-xxxxx/ 或 /manga-xxxxx/1/1142.html。"
+  },
+  "chapter": {
+    "titleSelector": "h1, .chapter-title, .post-title",
+    "pageImages": {
+      "strategy": "try_js_array_then_img",
+      "js_array_regex_list": [
+        "var\\s+pics\\s*=\\s*(\\[.*?\\])",
+        "var\\s+pages\\s*=\\s*(\\[.*?\\])",
+        "images\\s*=\\s*(\\[\\s*\\\"https?:.*?\\\"[\\s\\S]*?\\])",
+        "var\\s+chapter_images\\s*=\\s*(\\[.*?\\])",
+        "window\\.__images\\s*=\\s*(\\[.*?\\])"
+      ],
+      "js_array_extraction_note": "先用正则在页面中抽取 JS 中定义的图片数组（常见 pattern 如 var pics = [ ... ]），解析为数组后即为每页图片 URL。",
+      "fallback_image_selector": "div.read-content img, .reader img, #content img, .chapter-content img, .read img",
+      "fallback_note": "如果站点直接把 <img> 写入 HTML，则用以上选择器抓取；否则优先用 js_array_regex_list 提取 JS 中的图片数组。"
+    },
+    "nextSelector": "a:contains('下一章'), a[rel='next']",
+    "prevSelector": "a:contains('上一章'), a[rel='prev']"
+  },
+  "pagination": {
+    "listPagination": "a.next, .pagination a:contains('下一页')"
+  },
+  "cookies": [],
+  "auth": null,
+  "notes": "此 JSON 为 '通用抓取配置'。Colamanga 的章节页面图片通常由 JS 动态注入（渲染后会看到多张 <img>），因此推荐 Suwayomi-Server 的抓取组件能够解析页面 JS（或使用外部 headless 浏览器预取章节页面并返回解析后的 HTML / 图片数组）。如果 Suwayomi-Server 无法执行 JS，可以通过正则直接从原始页面抓取到定义图片数组的脚本文本（见 js_array_regex_list）。"
+}
