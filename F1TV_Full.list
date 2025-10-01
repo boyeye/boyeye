@@ -1,5 +1,3 @@
-payload:
-  # 官方网站 & 应用 API
 DOMAIN-SUFFIX,f1tv.formula1.com
 DOMAIN-SUFFIX,formula1.com
 DOMAIN-SUFFIX,api.formula1.com
@@ -8,8 +6,6 @@ DOMAIN-SUFFIX,account.formula1.com
 DOMAIN-SUFFIX,prod-streaming-video.s3.amazonaws.com
 DOMAIN-SUFFIX,formula1-prod.s3.amazonaws.com
 DOMAIN-SUFFIX,ott.formula1.com
-
-  # 视频流 CDN & DRM
 DOMAIN-SUFFIX,akamaized.net
 DOMAIN-SUFFIX,edgekey.net
 DOMAIN-SUFFIX,edgesuite.net
@@ -17,15 +13,9 @@ DOMAIN-SUFFIX,api.videoplaza.tv
 DOMAIN-SUFFIX,widevine.entitlement.eu-west-1.prod.bamgrid.com
 DOMAIN-SUFFIX,widevine.entitlement.global.prod.bamgrid.com
 DOMAIN-SUFFIX,drm-widevine-licensing.axprod.net
-
-  # 静态资源 & 图片
 DOMAIN-SUFFIX,images.formula1.com
 DOMAIN-SUFFIX,assets.formula1.com
-
-  # AWS Cloudfront (F1TV 常用)
 DOMAIN-SUFFIX,cloudfront.net
-
-  # 原有分流
 DOMAIN,d2n9h2wits23hf.cloudfront.net
 DOMAIN,f1prodlive.akamaized.net
 DOMAIN,mobile-collector.newrelic.com
