@@ -1,0 +1,66 @@
+{
+  "name": "绅士漫画（Wax）",
+  "pkg": "wax_json",
+  "version": "1.0.0",
+  "author": "comics",
+  "description": "绅士漫画（wnacg）- Suwayomi JSON 扩展（受限版）",
+  "lang": "zh",
+  "isNsfw": true,
+
+  "baseUrl": "https://wnacg.com",
+
+  "supportsLatest": true,
+  "supportsSearch": true,
+
+  "routes": {
+    "popular": "/albums-index-page-{page}.html",
+    "latest": "/albums-index-page-{page}.html",
+    "search": "/search/?q={query}&p={page}",
+
+    "detail": "/photos-index-aid-{id}.html",
+    "chapters": "/photos-index-aid-{id}.html",
+    "pages": "/photos-gallery-aid-{id}.html"
+  },
+
+  "parsers": {
+    "popular": {
+      "list": "a[href*='aid-']",
+      "id": "href:/aid-(\\d+)/",
+      "title": "img@title || img@alt",
+      "cover": "img@src || img@data-original"
+    },
+
+    "latest": {
+      "list": "a[href*='aid-']",
+      "id": "href:/aid-(\\d+)/",
+      "title": "img@title || img@alt",
+      "cover": "img@src || img@data-original"
+    },
+
+    "search": {
+      "list": "a[href*='aid-']",
+      "id": "href:/aid-(\\d+)/",
+      "title": "img@title || img@alt",
+      "cover": "img@src || img@data-original"
+    },
+
+    "detail": {
+      "title": "#comicName || title",
+      "author": ".introName",
+      "description": ".txtDesc",
+      "cover": ".pic img@src || #Cover img@src",
+      "tags": "a.tagshow"
+    },
+
+    "chapters": {
+      "list": "body",
+      "id": "{id}",
+      "title": "全一话"
+    },
+
+    "pages": {
+      "list": "img",
+      "image": "@src || @data-original"
+    }
+  }
+}
