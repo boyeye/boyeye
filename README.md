@@ -33,6 +33,25 @@ An offline, read-only Markdown viewer with tabs, outline, syntax highlighting an
 
 ---
 
+## ☕ 请我喝杯咖啡 · Buy me a coffee
+
+如果这些小工具帮到了你，欢迎自愿请我喝杯咖啡。谢谢支持 ❤️
+
+If you find these tools useful, you can buy me a coffee. Thank you for your support!
+
+参考金额：☕ 小杯 ¥9 · ☕☕ 中杯 ¥15 · ☕☕☕ 大杯 ¥28，也可以自己填金额。<br>
+Suggested: ¥9 / ¥15 / ¥28, or choose your own amount.
+
+<div align="center">
+
+<img src="wechat-reward.jpg" width="220" alt="微信赞赏码，可自选金额 · WeChat reward code, choose your own amount">
+
+用微信扫码赞赏 · Scan with WeChat to send a tip
+
+</div>
+
+---
+
 <div align="center">
 
 欢迎在各项目的 Issues 中反馈问题或建议 · Feedback welcome via each project's Issues
